@@ -60,3 +60,53 @@ navbar.addEventListener('mouseout', function () {
         navIcon.forEach(item => item.style.color = "white");
     }
 });
+
+// Funktion zum Akzeptieren der Cookies
+function acceptCookies() {
+    localStorage.setItem("cookieConsent", "accepted");  // Zustimmung speichern
+    document.getElementById("cookie-banner").style.display = "none";  // Banner ausblenden
+    
+    // Google Consent Mode aktualisieren, um Zustimmung zu Analytics und Werbe-Cookies zu gewähren
+    gtag('consent', 'update', {
+        'ad_storage': 'granted',    // Werbe-Cookies erlauben
+        'analytics_storage': 'granted'  // Analytics-Cookies erlauben
+    });
+
+    // Google Analytics aktivieren
+    gtag('config', 'G-KFMN2ESZZ9');
+}
+
+// Funktion zum Ablehnen der Cookies
+function denyCookies() {
+    localStorage.setItem("cookieConsent", "denied");  // Ablehnung speichern
+    document.getElementById("cookie-banner").style.display = "none";  // Banner ausblenden
+    
+    // Google Consent Mode aktualisieren, um keine Cookies zu setzen
+    gtag('consent', 'update', {
+        'ad_storage': 'denied',    // Werbe-Cookies ablehnen
+        'analytics_storage': 'denied'  // Analytics-Cookies ablehnen
+    });
+}
+
+// Überprüfen, ob bereits eine Entscheidung getroffen wurde
+window.onload = function() {
+    let consent = localStorage.getItem("cookieConsent");
+
+    if (consent === "accepted") {
+        // Wenn Zustimmung bereits erteilt wurde, Analytics aktivieren
+        gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'analytics_storage': 'granted'
+        });
+        gtag('config', 'G-KFMN2ESZZ9');
+    } else if (consent === "denied") {
+        // Wenn Ablehnung erfolgt ist, keine Cookies setzen
+        gtag('consent', 'update', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied'
+        });
+    } else {
+        // Wenn keine Entscheidung getroffen wurde, das Banner anzeigen
+        document.getElementById("cookie-banner").style.display = "block";
+    }
+};
