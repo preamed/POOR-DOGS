@@ -1,0 +1,203 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.navbar {
+    padding: 1%;
+    height: 1vw;
+    background-color: transparent;
+    transition: background-color 0.3s ease; /* Übergangseffekt für Hintergrundfarbe */
+}
+
+/* Zustand der Navbar, wenn sie gescrollt ist */
+.navbar.scrolled {
+    background-color: white; /* Hintergrund wird weiß, wenn nach unten gescrollt wird */
+}
+
+/* Navbar links am oberen Rand ausrichten */
+.navbar-nav {
+    display: flex;
+    align-items: center; /* Text nach oben ausrichten */
+    height: 100%; /* Höhe des Navbar-Containers übernehmen */
+}
+
+/* Hover-Effekt für die Navbar */
+.navbar.scrolled:hover {
+    background-color: white; /* Weißer Hintergrund bei Hover */
+}
+
+/* Hover-Effekt für Links und Icons in der Navbar */
+.navbar.scrolled .nav-text,
+.navbar.scrolled .nav-icon {
+    color: black; /* Schwarze Farbe für Texte und Icons bei Hover */
+}
+
+.nav-text {
+    color: white; /* Standardfarbe für Text (weiß) */
+    font-weight: bold;
+    font-size: 11px;
+    transition: color 0.3s ease; /* Übergangseffekt für Textfarbe */
+}
+
+.nav-icon {
+    color: white; /* Standardfarbe für Icons (weiß) */
+    font-weight: bold;
+    transition: color 0.3s ease; /* Übergangseffekt für Iconfarbe */
+}
+
+/* Standard: Weißes Logo */
+#logo-container {
+    width: 50px;
+    height: 1.8vw;
+    background-image: url('images/logo-white.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: background-image 0.3s ease;
+}
+
+/* Optionaler Hover-Effekt für das Logo in der Navbar */
+.navbar:hover #logo-container {
+    background-image: url('images/logo-black.svg'); /* Schwarzes Logo beim Hover */
+}
+
+
+/* Hover-Effekt für die Navbar: Hintergrund wird weiß und Text/Icons schwarz */
+.navbar:hover {
+    background-color: white; /* Weißer Hintergrund bei Hover */
+}
+
+/* Hover-Effekt für Links und Icons in der Navbar */
+.navbar:hover .nav-text, .navbar:hover .nav-icon {
+    color: black; /* Schwarze Farbe für Texte und Icons bei Hover */
+}
+
+/* Bild unter der Navbar */
+.full-screen-image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Volle Bildschirmhöhe */
+}
+
+.full-screen-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Bild wird auf das Container-Verhältnis zugeschnitten */
+}
+
+.image-overlay {
+    position: absolute; /* Overlay wird über dem Bild platziert */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Halbtransparentes schwarzes Overlay */
+}
+
+.text-container {
+    position: absolute; /* Text und Button werden innerhalb des Containers absolut positioniert */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Zentriert den Text und Button */
+    color: white; /* Weißer Text */
+    text-align: center;
+}
+
+.btn-custom {
+    margin-top: 20px; /* Abstand zwischen dem Text und dem Button */
+    background-color: white; /* Button-Hintergrundfarbe */
+    color: black; /* Button-Textfarbe */
+    padding: 10px 20px; /* Button-Größe */
+    border-radius: 20px; /* Runde Ecken */
+    text-decoration: none; /* Kein unterstrichener Text */
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s; /* sanfter Übergang bei Hover */
+}
+
+.btn-custom:hover {
+    background-color: black; /* Dunklerer Farbton bei Hover */
+    color: white;
+}
+
+#collection-name {
+    padding-top: 15%;
+    padding-bottom: 10%;
+    font-weight: bold;
+    font-size: large;
+}
+
+.footer {
+    background-color: white; /* Weißer Hintergrund */
+    color: black; /* Schwarzer Text */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid #e0e0e0; /* Optionale obere Linie für Trennung */
+}
+
+.footer-heading {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: black; /* Überschriftenfarbe */
+}
+
+.footer-link {
+    color: black; /* Standardfarbe der Links */
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: #555; /* Dunklere Farbe bei Hover */
+}
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+.payment-logos {
+    display: flex; /* Flexbox für nebeneinander anordnen */
+    justify-content: space-between; /* Verteilt die Logos gleichmäßig */
+    align-items: center; /* Zentriert die Logos vertikal */
+    margin-top: 15px; /* Abstand zwischen Überschrift und Logos */
+}
+
+.payment-logo {
+    width: 50px; /* Setzt eine feste Breite für die Logos */
+    height: auto; /* Erhält das Seitenverhältnis der Logos */
+}
+
+#copyright{
+    font-weight: bold;
+}
+
+/* Scrolling Banner */
+.scrolling-banner {
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner-text {
+    display: flex;
+    animation: scroll-banner 30s linear infinite;
+}
+
+.banner-text p {
+    display: inline-block;
+    margin: 0;
+    padding-right: 50px;
+}
+
+@keyframes scroll-banner {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
