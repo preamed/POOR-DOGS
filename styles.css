@@ -222,8 +222,9 @@ body{
 }
 
 .cookie-consent-banner button {
-    background-color: #ff5e00;
-    color: white;
+    background-color: white;
+    color: black;
+    font-weight: bold;
     border: none;
     padding: 10px 15px;
     margin: 5px;
@@ -231,5 +232,7 @@ body{
 }
 
 .cookie-consent-banner button:hover {
-    background-color: #e14a00;
+    background-color: black;
+    color: white;
+    font-weight: bold;
 }

@@ -105,7 +105,8 @@ function setConsent(consentStatus) {
             'analytics_storage': 'granted', // Analyse-Speicher
             'personalization_storage': 'granted', // Personalisierungs-Speicher
             'functional_storage': 'granted', // Funktionalitäts-Speicher
-            'security_storage': 'granted' // Sicherheits-Speicher
+            'security_storage': 'granted', // Sicherheits-Speicher
+            'ad_personalizazion': 'granted'
         });
     } else {
         gtag('consent', 'update', {
@@ -113,7 +114,8 @@ function setConsent(consentStatus) {
             'analytics_storage': 'denied', // Keine Analyse
             'personalization_storage': 'denied', // Keine Personalisierung
             'functional_storage': 'denied', // Keine Funktionalität
-            'security_storage': 'denied' // Keine Sicherheits-Cookies
+            'security_storage': 'denied',
+            'ad_personalizazion': 'denied'
         });
     }
 }
