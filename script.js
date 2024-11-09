@@ -78,13 +78,13 @@ document.addEventListener('DOMContentLoaded', function () {
     acceptAllButton.addEventListener('click', function () {
         localStorage.setItem('cookie-consent', 'granted'); // Speichert die Zustimmung des Nutzers
         setConsent('granted'); // Aktiviert Google Analytics
-        //consentBanner.style.display = 'none'; // Versteckt den Banner
+        consentBanner.style.display = 'none'; // Versteckt den Banner
     });
 
     rejectAllButton.addEventListener('click', function () {
         localStorage.setItem('cookie-consent', 'denied'); // Speichert die Ablehnung des Nutzers
         setConsent('denied'); // Deaktiviert Google Analytics
-        //consentBanner.style.display = 'none'; // Versteckt den Banner
+        consentBanner.style.display = 'none'; // Versteckt den Banner
     });
 });
 
@@ -97,21 +97,17 @@ function setConsent(consentStatus) {
     
     if (consentStatus === 'granted') {
         gtag('consent', 'update', {
-            'ad_storage': 'granted', // Werbespeicher
-            'analytics_storage': 'granted', // Analyse-Speicher
-            'personalization_storage': 'granted', // Personalisierungs-Speicher
-            'functional_storage': 'granted', // Funktionalitäts-Speicher
-            'security_storage': 'granted', // Sicherheits-Speicher
-            'ad_personalizazion': 'granted'
-        });
+            'ad_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
+            'analytics_storage': 'granted'
+            });
     } else {
         gtag('consent', 'update', {
-            'ad_storage': 'denied', // Keine Werbung
-            'analytics_storage': 'denied', // Keine Analyse
-            'personalization_storage': 'denied', // Keine Personalisierung
-            'functional_storage': 'denied', // Keine Funktionalität
-            'security_storage': 'denied',
-            'ad_personalizazion': 'denied'
-        });
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+            });
     }
 }
