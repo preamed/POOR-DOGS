@@ -11,23 +11,27 @@
     gtag('config', 'G-KFMN2ESZZ9');
     </script>
 
-    <!-- Google Analytics Consent Settings -->
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-
-        if(localStorage.getItem('consentMode') === null){
-            gtag('consent', 'granted', {
-            'ad_storage': 'granted',
-            'analytics_storage': 'granted',
-            'personalization_storage': 'granted',
-            'functionality_storage': 'granted',
-            'security_storage': 'granted',
-            });
-        } else {
-            gtag('consent', 'default', JSON.parse(localStorage.getItem('consentMode')));
+        function setConsent(consentStatus) {
+            window.gtag = window.gtag || function () {
+                dataLayer.push(arguments);
+            };
+            window.dataLayer = window.dataLayer || [];
+            
+            // Konfiguration des Google Consent Mode
+            if (consentStatus === 'granted') {
+                gtag('consent', 'update', {
+                    'ad_storage': 'granted', // Für Marketing Cookies
+                    'analytics_storage': 'granted', // Für Google Analytics
+                });
+            } else {
+                gtag('consent', 'update', {
+                    'ad_storage': 'denied',
+                    'analytics_storage': 'denied',
+                });
+            }
         }
-        </script>
+    </script>
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -174,20 +178,6 @@
             </div>
         </div>        
     </footer>
-    <!-- Cookie Banner -->
-    <div id="cookie-consent-banner" class="cookie-consent-banner">
-        <h3>Cookie settings</h3>
-        <p>We use cookies to provide you with the best possible experience. They also allow us to analyze user behavior in order to constantly improve the website for you.</p>
-        <button id="btn-accept-all" class="cookie-consent-button btn-success">Accept All</button>
-        <button id="btn-accept-some" class="cookie-consent-button btn-outline">Accept Selection</button>
-        <button id="btn-reject-all" class="cookie-consent-button btn-grayscale">Reject All</button>
-        <div class="cookie-consent-options">
-            <label><input id="consent-necessary" type="checkbox" value="Necessary" checked disabled>Necessary</label>
-            <label><input id="consent-analytics" type="checkbox" value="Analytics" checked>Analytics</label>
-            <label><input id="consent-preferences" type="checkbox" value="Preferences" checked>Preferences</label>
-            <label><input id="consent-marketing" type="checkbox" value="Marketing">Marketing</label>
-        </div>
-    </div>
 
     <script src="script.js">
     </script>
@@ -196,4 +186,14 @@
     <!-- Bootstrap Icons von CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
 </body>
+
+<div id="cookie-consent-banner" class="cookie-consent-banner">
+    <div class="cookie-content">
+        <p>Wir verwenden Cookies, um unsere Website zu verbessern und Werbung anzuzeigen. Sie können auswählen, welche Cookies Sie akzeptieren möchten.</p>
+        <button id="accept-all-cookies" class="btn">Alle Cookies akzeptieren</button>
+        <button id="reject-all-cookies" class="btn">Nur notwendige Cookies</button>
+        <button id="cookie-settings" class="btn">Einstellungen</button>
+    </div>
+</div>
+
 </html>

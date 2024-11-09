@@ -60,50 +60,54 @@ navbar.addEventListener('mouseout', function () {
     }
 });
 
-function hideBanner() {
-    document.getElementById('cookie-consent-banner').style.display = 'none';
-}
 
-if (localStorage.getItem('consentMode') === null) {
+// Cookie Consent Banner
+document.addEventListener('DOMContentLoaded', function () {
+    const consentBanner = document.getElementById('cookie-consent-banner');
+    const acceptAllButton = document.getElementById('accept-all-cookies');
+    const rejectAllButton = document.getElementById('reject-all-cookies');
+    const settingsButton = document.getElementById('cookie-settings');
+        
+    // Überprüfen, ob der Benutzer bereits seine Zustimmung gegeben hat
+    const consentGiven = localStorage.getItem('cookie-consent');
+        
+    if (!consentGiven) {
+        consentBanner.style.display = 'block'; // Zeigt den Banner, wenn keine Entscheidung getroffen wurde
+    }
+        
+    acceptAllButton.addEventListener('click', function () {
+        localStorage.setItem('cookie-consent', 'granted'); // Speichert die Zustimmung des Nutzers
+        setConsent('granted'); // Aktiviert Google Analytics
+        consentBanner.style.display = 'none'; // Versteckt den Banner
+    });
 
-    document.getElementById('btn-accept-all').addEventListener('click', function() {
-        setConsent({
-            necessary: true,
-            analytics: true,
-            preferences: true,
-            marketing: true
-        });
-        hideBanner();
+    rejectAllButton.addEventListener('click', function () {
+        localStorage.setItem('cookie-consent', 'denied'); // Speichert die Ablehnung des Nutzers
+        setConsent('denied'); // Deaktiviert Google Analytics
+        consentBanner.style.display = 'none'; // Versteckt den Banner
     });
-    document.getElementById('btn-accept-some').addEventListener('click', function() {
-        setConsent({
-            necessary: true,
-            analytics: document.getElementById('consent-analytics').checked,
-            preferences: document.getElementById('consent-preferences').checked,
-            marketing: document.getElementById('consent-marketing').checked
-        });
-        hideBanner();
-    });
-    document.getElementById('btn-reject-all').addEventListener('click', function() {
-        setConsent({
-            necessary: false,
-            analytics: false,
-            preferences: false,
-            marketing: false
-        });
-        hideBanner();
-    });
-    document.getElementById('cookie-consent-banner').style.display = 'block';
-}
 
-function setConsent(consent) {
-    const consentMode = {
-        'functionality_storage': consent.necessary ? 'granted' : 'denied',
-        'security_storage': consent.necessary ? 'granted' : 'denied',
-        'ad_storage': consent.marketing ? 'granted' : 'denied',
-        'analytics_storage': consent.analytics ? 'granted' : 'denied',
-        'personalization_storage': consent.preferences ? 'granted' : 'denied',
+    settingsButton.addEventListener('click', function () {
+        alert('Einstellungen können hier hinzugefügt werden.'); // Hier kannst du erweiterte Einstellungen hinzufügen
+    });
+});
+
+// Funktion zur Aktualisierung des Google Consent Modus
+function setConsent(consentStatus) {
+    window.gtag = window.gtag || function () {
+        dataLayer.push(arguments);
     };
-    gtag('consent', 'update', consentMode);
-    localStorage.setItem('consentMode', JSON.stringify(consentMode));
+    window.dataLayer = window.dataLayer || [];
+    
+    if (consentStatus === 'granted') {
+        gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'analytics_storage': 'granted',
+        });
+    } else {
+        gtag('consent', 'update', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied',
+        });
+    }
 }
