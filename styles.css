@@ -102,12 +102,12 @@ body{
 }
 
 .btn-custom {
-    margin-top: 20px; /* Abstand zwischen dem Text und dem Button */
     background-color: white; /* Button-Hintergrundfarbe */
     color: black; /* Button-Textfarbe */
-    padding: 10px 20px; /* Button-Größe */
-    border-radius: 20px; /* Runde Ecken */
-    text-decoration: none; /* Kein unterstrichener Text */
+    margin-top: -10px;
+    padding: 8px 20px; /* Button-Größe */
+    border: none;
+    border-radius: 50px; /* Runde Ecken */
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s; /* sanfter Übergang bei Hover */
 }
