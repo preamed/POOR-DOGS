@@ -78,17 +78,13 @@ document.addEventListener('DOMContentLoaded', function () {
     acceptAllButton.addEventListener('click', function () {
         localStorage.setItem('cookie-consent', 'granted'); // Speichert die Zustimmung des Nutzers
         setConsent('granted'); // Aktiviert Google Analytics
-        consentBanner.style.display = 'none'; // Versteckt den Banner
+        //consentBanner.style.display = 'none'; // Versteckt den Banner
     });
 
     rejectAllButton.addEventListener('click', function () {
         localStorage.setItem('cookie-consent', 'denied'); // Speichert die Ablehnung des Nutzers
         setConsent('denied'); // Deaktiviert Google Analytics
-        consentBanner.style.display = 'none'; // Versteckt den Banner
-    });
-
-    settingsButton.addEventListener('click', function () {
-        alert('Einstellungen können hier hinzugefügt werden.'); // Hier kannst du erweiterte Einstellungen hinzufügen
+        //consentBanner.style.display = 'none'; // Versteckt den Banner
     });
 });
 

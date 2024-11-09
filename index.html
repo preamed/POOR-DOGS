@@ -12,35 +12,18 @@
     </script>
 
     <script>
-        function setConsent(consentStatus) {
-            window.gtag = window.gtag || function () {
-                dataLayer.push(arguments);
-            };
-            window.dataLayer = window.dataLayer || [];
-            
-            // Konfiguration des Google Consent Mode
-            if (consentStatus === 'granted') {
-                gtag('consent', 'update', {
-                    'ad_storage': 'granted', // Werbespeicher
-                    'analytics_storage': 'granted', // Analyse-Speicher
-                    'personalization_storage': 'granted', // Personalisierungs-Speicher
-                    'functional_storage': 'granted', // Funktionalitäts-Speicher
-                    'security_storage': 'granted',
-                    'ad_personalizazion': 'granted' // Sicherheits-Speicher
-                });
-
-            } else {
-                gtag('consent', 'update', {
-                    'ad_storage': 'denied', // Keine Werbung
-                    'analytics_storage': 'denied', // Keine Analyse
-                    'personalization_storage': 'denied', // Keine Personalisierung
-                    'functional_storage': 'denied', // Keine Funktionalität
-                    'security_storage': 'denied', // Keine Sicherheits-Cookies
-                    'ad_personalizazion': 'denied'
-                });
-
-            }
-        }
+        // Define dataLayer and the gtag function.
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+    
+        // Set default consent to 'denied' as a placeholder
+        // Determine actual values based on your own requirements
+        gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied'
+        });
     </script>
 
     <!-- Google Tag Manager -->
