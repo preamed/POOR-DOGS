@@ -10,25 +10,46 @@
 
     gtag('config', 'G-KFMN2ESZZ9');
     </script>
+
+    <!-- Google Analytics Consent Settings -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        if(localStorage.getItem('consentMode') === null){
+            gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied',
+            'personalization_storage': 'denied',
+            'functionality_storage': 'denied',
+            'security_storage': 'denied',
+            });
+        } else {
+            gtag('consent', 'default', JSON.parse(localStorage.getItem('consentMode')));
+        }
+        </script>
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-PQCC6KRQ');</script>
-    <!-- End Google Tag Manager -->
+
+    <!-- Standard Einstellungen -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POOR DOGS | STORE</title>
     <link rel="icon" href="images/logo_whitebackground.png" type="image/x-icon">
 
-    
-    <!-- Bootstrap CSS von CDN -->
+    <!-- Bootstrap Verlinkung -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
     <!-- Google Fonts Verlinkung -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
     <!-- CSS Verlinkung -->
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -36,7 +57,7 @@
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQCC6KRQ"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+
     <header>
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg fixed-top">
@@ -64,19 +85,14 @@
         </nav>
     </header>
 
-    <!-- Bild unter der Navbar, das den restlichen Bildschirm einnimmt -->
+    <!-- Bild unter der Navbar -->
     <div class="full-screen-image-container">
         <img src="images/6pm.gif" alt="Hintergrundbild" class="full-screen-image">
         <div class="image-overlay"></div>
         <div class="text-container">
             <img src="images/logo_white.png" alt="white poor dogs logo" height="100">
             <p id="collection-name">LOST HOPE</p>
-            <button href="#shop" class="btn-custom" onclick="gtag('event', 'button_click', {
-                'event_category': 'engagement',
-                'event_label': 'Shop Now',
-                'value': 1
-              });">SHOP NOW</button>
-              
+            <button href="#shop" class="btn-custom" onclick="gtag('event', 'button_click', {'event_category': 'engagement','event_label': 'Shop Now', 'value': 1});">SHOP NOW</button>
         </div>
     </div>
 
@@ -100,9 +116,6 @@
             <p>FREE SHIPPING ONLY TODAY</p>
         </div>
     </div>
-
-
-
 
     <footer class="footer">
         <div class="container py-3">
@@ -159,6 +172,20 @@
             </div>
         </div>        
     </footer>
+    <!-- Cookie Banner -->
+    <div id="cookie-consent-banner" class="cookie-consent-banner">
+        <h3>Cookie settings</h3>
+        <p>We use cookies to provide you with the best possible experience. They also allow us to analyze user behavior in order to constantly improve the website for you.</p>
+        <button id="btn-accept-all" class="cookie-consent-button btn-success">Accept All</button>
+        <button id="btn-accept-some" class="cookie-consent-button btn-outline">Accept Selection</button>
+        <button id="btn-reject-all" class="cookie-consent-button btn-grayscale">Reject All</button>
+        <div class="cookie-consent-options">
+            <label><input id="consent-necessary" type="checkbox" value="Necessary" checked disabled>Necessary</label>
+            <label><input id="consent-analytics" type="checkbox" value="Analytics" checked>Analytics</label>
+            <label><input id="consent-preferences" type="checkbox" value="Preferences" checked>Preferences</label>
+            <label><input id="consent-marketing" type="checkbox" value="Marketing">Marketing</label>
+        </div>
+    </div>
 
     <script src="script.js">
     </script>
