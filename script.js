@@ -101,13 +101,19 @@ function setConsent(consentStatus) {
     
     if (consentStatus === 'granted') {
         gtag('consent', 'update', {
-            'ad_storage': 'granted',
-            'analytics_storage': 'granted',
+            'ad_storage': 'granted', // Werbespeicher
+            'analytics_storage': 'granted', // Analyse-Speicher
+            'personalization_storage': 'granted', // Personalisierungs-Speicher
+            'functional_storage': 'granted', // Funktionalitäts-Speicher
+            'security_storage': 'granted' // Sicherheits-Speicher
         });
     } else {
         gtag('consent', 'update', {
-            'ad_storage': 'denied',
-            'analytics_storage': 'denied',
+            'ad_storage': 'denied', // Keine Werbung
+            'analytics_storage': 'denied', // Keine Analyse
+            'personalization_storage': 'denied', // Keine Personalisierung
+            'functional_storage': 'denied', // Keine Funktionalität
+            'security_storage': 'denied' // Keine Sicherheits-Cookies
         });
     }
 }
