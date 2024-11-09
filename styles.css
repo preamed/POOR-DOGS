@@ -96,7 +96,7 @@ body{
     position: absolute; /* Text und Button werden innerhalb des Containers absolut positioniert */
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Zentriert den Text und Button */
+    transform: translate(-50%, -50%);
     color: white; /* Weißer Text */
     text-align: center;
 }
