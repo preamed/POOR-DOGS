@@ -11,6 +11,24 @@
     gtag('config', 'G-KFMN2ESZZ9');
     </script>
 
+    <!-- Google Analytics Consent Settings -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        if(localStorage.getItem('consentMode') === null){
+            gtag('consent', 'granted', {
+            'ad_storage': 'granted',
+            'analytics_storage': 'granted',
+            'personalization_storage': 'granted',
+            'functionality_storage': 'granted',
+            'security_storage': 'granted',
+            });
+        } else {
+            gtag('consent', 'default', JSON.parse(localStorage.getItem('consentMode')));
+        }
+        </script>
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -157,6 +175,19 @@
         </div>        
     </footer>
     <!-- Cookie Banner -->
+    <div id="cookie-consent-banner" class="cookie-consent-banner">
+        <h3>Cookie settings</h3>
+        <p>We use cookies to provide you with the best possible experience. They also allow us to analyze user behavior in order to constantly improve the website for you.</p>
+        <button id="btn-accept-all" class="cookie-consent-button btn-success">Accept All</button>
+        <button id="btn-accept-some" class="cookie-consent-button btn-outline">Accept Selection</button>
+        <button id="btn-reject-all" class="cookie-consent-button btn-grayscale">Reject All</button>
+        <div class="cookie-consent-options">
+            <label><input id="consent-necessary" type="checkbox" value="Necessary" checked disabled>Necessary</label>
+            <label><input id="consent-analytics" type="checkbox" value="Analytics" checked>Analytics</label>
+            <label><input id="consent-preferences" type="checkbox" value="Preferences" checked>Preferences</label>
+            <label><input id="consent-marketing" type="checkbox" value="Marketing">Marketing</label>
+        </div>
+    </div>
 
     <script src="script.js">
     </script>
