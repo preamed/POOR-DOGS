@@ -55,7 +55,6 @@ navbar.addEventListener('mouseout', function () {
     if (window.scrollY === 0) { // Wenn der Benutzer nicht gescrollt hat, bleibt es weiß
         logoContainer.style.backgroundImage = "url('images/logo-white.svg')";
         navbar.style.backgroundColor = "transparent"; // Hintergrund transparent
-        // Text und Icons zurück auf weiß setzen
         navText.forEach(item => item.style.color = "white");
         navIcon.forEach(item => item.style.color = "white");
     }
