@@ -129,8 +129,8 @@ body{
 }
 
 .footer {
-    background-color: white; /* Weißer Hintergrund */
-    color: black; /* Schwarzer Text */
+    background-color: black; /* Weißer Hintergrund */
+    color: white; /* Schwarzer Text */
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -139,11 +139,11 @@ body{
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 15px;
-    color: black; /* Überschriftenfarbe */
+    color: white; /* Überschriftenfarbe */
 }
 
 .footer-link {
-    color: black; /* Standardfarbe der Links */
+    color: white; /* Standardfarbe der Links */
     text-decoration: none;
 }
 
@@ -181,7 +181,7 @@ body{
 
 #copyright{
     font-weight: bold;
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
@@ -447,3 +447,7 @@ body{
 #color-black {
     font-size: small;
 } 
+
+.product-details {
+    margin-bottom: -5px;
+}
