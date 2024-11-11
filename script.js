@@ -111,3 +111,111 @@ function setConsent(consentStatus) {
             });
     }
 }
+
+// Array mit den Bildquellen für die Produktbilder
+const images = [
+    'images/product_images/tshirt-frontview.jpg',
+    'images/product_images/tshirt-sideview.jpg',
+    'images/product_images/tshirt-backview.jpg',
+    'images/product_images/tshirt-only.jpg'
+];
+let currentImageIndex = 0;
+
+// Funktion zum Ändern des Hauptbildes und zum Hervorheben des Thumbnails
+function changeMainImage(imageSrc) {
+    // Ändere das Hauptbild
+    document.getElementById('mainImage').src = imageSrc;
+
+    // Entferne die 'selected' Klasse von allen Thumbnails
+    let thumbnails = document.querySelectorAll('.thumbnail-img');
+    thumbnails.forEach(function(thumbnail) {
+        thumbnail.classList.remove('selected');
+    });
+
+    // Füge die 'selected' Klasse zum Thumbnail des aktuellen Bildes hinzu
+    let currentThumbnail = Array.from(thumbnails).find(function(thumbnail) {
+        return thumbnail.src.includes(imageSrc);
+    });
+    if (currentThumbnail) {
+        currentThumbnail.classList.add('selected');
+    }
+}
+
+// Initiale Markierung des ersten Thumbnails
+document.addEventListener('DOMContentLoaded', function() {
+    let firstThumbnail = document.querySelector('.thumbnail-img');
+    if (firstThumbnail) {
+        firstThumbnail.classList.add('selected');
+    }
+});
+
+
+// Nächstes Bild anzeigen
+function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    changeMainImage(images[currentImageIndex]);
+}
+
+// Vorheriges Bild anzeigen
+function previousImage() {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    changeMainImage(images[currentImageIndex]);
+}
+
+// Funktion zum Auswählen der Farbe und zum Hinzufügen der Umrandung
+function selectColor(color) {
+    // Entferne die 'selected' Klasse von allen Farbfeldern
+    let colorOptions = document.querySelectorAll('.color-option');
+    colorOptions.forEach(function(option) {
+        option.classList.remove('selected');
+    });
+
+    // Füge die 'selected' Klasse zum ausgewählten Farbfeld hinzu
+    let selectedColor = Array.from(colorOptions).find(function(option) {
+        return option.style.backgroundColor === color;
+    });
+
+    if (selectedColor) {
+        selectedColor.classList.add('selected');
+    }
+
+    // Hier kannst du zusätzliche Aktionen hinzufügen, wie z.B. das Produktbild ändern,
+    // wenn die Farbe des Produkts mit dem Farbfeld übereinstimmt
+    // changeMainImage('path_to_image_for_' + color);  // Beispiel, um Bild nach Farbe zu ändern
+}
+
+// Initiale Markierung des ersten Farbfelds (optional)
+document.addEventListener('DOMContentLoaded', function() {
+    let firstColorOption = document.querySelector('.color-option');
+    if (firstColorOption) {
+        firstColorOption.classList.add('selected');
+    }
+});
+
+// Hinzufügen der "selected" Klasse beim Klicken auf einen Button
+const sizeButtons = document.querySelectorAll('.btn-group .btn');
+
+sizeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Entfernt die "selected" Klasse von allen Buttons
+        sizeButtons.forEach(btn => btn.classList.remove('selected'));
+        // Fügt die "selected" Klasse zum angeklickten Button hinzu
+        button.classList.add('selected');
+    });
+});
+
+function scrollToShop() {
+    const target = document.getElementById('shop');
+    
+    if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+        
+        gtag('event', 'button_click', {
+            'event_category': 'engagement',
+            'event_label': 'Shop Now',
+            'value': 1
+        });
+    } else {
+        console.error('Element mit ID "shop" nicht gefunden');
+    }
+}

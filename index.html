@@ -12,12 +12,10 @@
     </script>
 
     <script>
-        // Define dataLayer and the gtag function.
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
     
-        // Set default consent to 'denied' as a placeholder
-        // Determine actual values based on your own requirements
+        // Set default consent to 'denied' to prevent tracking before user consent.
         gtag('consent', 'default', {
         'ad_storage': 'denied',
         'ad_user_data': 'denied',
@@ -34,21 +32,21 @@
     })(window,document,'script','dataLayer','GTM-PQCC6KRQ');</script>
     <!-- End Google Tag Manager -->
 
-    <!-- Standard Einstellungen -->
+    <!-- Standard Settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POOR DOGS | STORE</title>
     <link rel="icon" href="images/logo_whitebackground.png" type="image/x-icon">
 
-    <!-- Bootstrap Verlinkung -->
+    <!-- Bootstrap Link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <!-- Google Fonts Verlinkung -->
+    <!-- Google Fonts Link -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
-    <!-- CSS Verlinkung -->
+    <!-- CSS Link -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -61,7 +59,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container-fluid d-flex align-items-center justify-content-between" style="height: 100%;">
-                <!-- Links auf der linken Seite -->
+                <!-- Links on the left side -->
                 <div class="navbar-nav me-auto d-flex align-items-center" style="flex: 1;">
                     <a class="nav-link nav-text" href="#home">HOME</a>
                     <a class="nav-link nav-text" href="#shop">SHOP</a>
@@ -69,12 +67,12 @@
                     <a class="nav-link nav-text" href="#brands">BRAND</a>
                 </div>
                 
-                <!-- Logo in der Mitte -->
+                <!-- Logo in the middle -->
                 <div class="navbar-brand mx-auto d-flex justify-content-center align-items-center" href="index.html" style="flex: 1;">
                     <div id="logo-container"></div>
                 </div>                
 
-                <!-- Icons auf der rechten Seite -->
+                <!-- Icons on the right side -->
                 <div class="navbar-nav ms-auto d-flex align-items-center" style="flex: 1; justify-content: flex-end;">
                     <a class="nav-link nav-icon" href="#search"><i class="bi bi-search"></i></a>
                     <a class="nav-link nav-icon" href="#profile"><i class="bi bi-person"></i></a>
@@ -84,24 +82,19 @@
         </nav>
     </header>
 
-    <!-- Bild unter der Navbar -->
+    <!-- Opener -->
     <div class="full-screen-image-container">
         <img src="images/6pm.gif" alt="Hintergrundbild" class="full-screen-image">
         <div class="image-overlay"></div>
         <div class="text-container">
             <img src="images/logo_white.png" alt="white poor dogs logo" height="100">
             <p id="collection-name">LOST HOPE</p>
-            <button href="#shop" class="btn-custom" onclick="gtag('event', 'button_click', {
-                'event_category': 'engagement',
-                'event_label': 'Shop Now',
-                'value': 1
-              });">SHOP NOW</button>
-              
+            <button class="btn-custom" onclick="scrollToShop(50)">SHOP NOW</button>              
         </div>
     </div>
 
     <!-- Scrolling Banner -->
-    <div class="scrolling-banner">
+    <div id="scrolling-banner" class="scrolling-banner">
         <div class="banner-text">
             <p>FREE SHIPPING ONLY TODAY</p>
             <p>FREE SHIPPING ONLY TODAY</p>
@@ -120,6 +113,89 @@
             <p>FREE SHIPPING ONLY TODAY</p>
         </div>
     </div>
+
+
+    <!-- Shop Section-->
+    <div id="shop" class="py-3"></div>
+    <section>
+        <div class="container my-5">
+            <div class="row">
+                <!-- Linke Spalte für die Produktbilder -->
+                <div id="mainImageContainer" class="col-md-7">
+                    <div class="position-relative">
+                        <!-- Großes Bild -->
+                        <img id="mainImage" src="images/product_images/tshirt-frontview.jpg" class="img-fluid w-75 mb-3" alt="Produktbild">
+
+                        <!-- Navigationspfeile -->
+                        <button onclick="previousImage()" class="btn btn-outline-dark position-absolute" style="left: 40px;">‹</button>
+                        <button onclick="nextImage()" class="btn btn-outline-dark position-absolute" style="right: 40px;">›</button>
+                    </div>
+
+                    <!-- Kleine Vorschaubilder unter dem großen Bild -->
+                    <div class="thumbnail-container">
+                        <img src="images/product_images/tshirt-frontview.jpg" class="thumbnail-img img-thumbnail" onclick="changeMainImage('images/product_images/tshirt-frontview.jpg')" alt="Vorschaubild 1">
+                        <img src="images/product_images/tshirt-sideview.jpg" class="thumbnail-img img-thumbnail" onclick="changeMainImage('images/product_images/tshirt-sideview.jpg')" alt="Vorschaubild 2">
+                        <img src="images/product_images/tshirt-backview.jpg" class="thumbnail-img img-thumbnail" onclick="changeMainImage('images/product_images/tshirt-backview.jpg')" alt="Vorschaubild 3">
+                        <img src="images/product_images/tshirt-only.jpg" class="thumbnail-img img-thumbnail" onclick="changeMainImage('images/product_images/tshirt-only.jpg')" alt="Vorschaubild 4">
+                    </div>
+                </div>
+
+                <!-- Product Text -->
+                <div class="col-md-5 product-name">
+                    <h2>FINGERPRINT TEE</h2>
+                    
+                    <!-- Price -->
+                    <div class="price-container">
+                        <p class="h4 text-muted price">€49.99</p>
+                        <p class="text-muted vat">VAT INCL.</p>
+                    </div>
+
+                    <!-- Color -->
+                    <div class="mb-3 py-3">
+                        <p id="color-black" class="form-label">BLACK</p>
+                        <div class="color-options">
+                            <div class="color-option" style="background-color: black;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Sizes -->
+                    <div class="mb-3 py-2">
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn selected">XS</button>
+                            <button type="button" class="btn">S</button>
+                            <button type="button" class="btn">M</button>
+                            <button type="button" class="btn">L</button>
+                            <button type="button" class="btn">XL</button>
+                            <button type="button" class="btn">XXL</button>
+                        </div>
+                        <p id="size" class="text-muted py-2">MODEL HEIGHT: 183 CM SIZE: S</p>
+                    </div>
+
+                    <!-- "Add to Cart" Button -->
+                    <button class="w-100 cart-button">ADD TO CART</button>
+
+                    <!-- Product details -->
+                    <div class="product-details py-4">
+                        <h5>PRODUCT DETAILS</h5>
+                        <ul>
+                            <li>Regular Fit</li>
+                            <li>Front print</li>
+                            <li>100% Cotton</li>
+                        </ul>
+                    </div>
+                        <div>
+                            <h5 >CARE INSTRUCTIONS:</h5>
+                            <ul>
+                                <li>Please wash at 30°C on a gentle cycle and avoid fabric softener.</li>
+                                <li>Turn inside out when washing and ironing, and do not tumble dry.</li>
+                                <li>Wash with similar colors.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    </section>
+
+
 
     <!-- Testimonials Section -->
     <section class="py-3">
@@ -206,17 +282,25 @@
         </div>
     </section>
 
+    <!-- Featured In -->
     <section class="py3">
         <div class="container featured-in">
             <h5>FEATURED IN:</h5>
             <div class="magazine-logos">
-                <img src="images/vogue-logo.png" alt="Vouge" class="magazine-logo">
-                <img src="images/gq-logo.png" alt="GQ" class="magazine-logo">
-                <img src="images/hapers-bazar-logo.png" alt="Harpers Bazar" class="magazine-logo">
+                <a href="https://www.vogue.de/">
+                    <img src="images/magazine_logos/vogue-logo.png" alt="Vouge" class="magazine-logo">
+                </a>
+                <a href="https://www.gq-magazin.de/">
+                    <img src="images/magazine_logos/gq-logo.png" alt="GQ" class="magazine-logo">
+                </a>
+                <a href="https://www.harpersbazaar.de/">
+                    <img src="images/magazine_logos/hapers-bazar-logo.png" alt="Harpers Bazar" class="magazine-logo">
+                </a>
             </div>
         </div>
     </section>
-
+    
+    <!-- Footer -->
     <footer class="footer">
         <div class="container py-3">
             <div class="row" style="align-items: flex-start;">
@@ -256,10 +340,10 @@
                 <div class="col-md-3">
                     <h5 class="footer-heading">PAYMENT METHODS</h5>
                     <div class="payment-logos">
-                        <img src="images/paypal-logo.png" alt="PayPal" class="payment-logo">
-                        <img src="images/visa-logo.png" alt="Visa" class="payment-logo">
-                        <img src="images/mastercard-logo.png" alt="Mastercard" class="payment-logo">
-                        <img src="images/apple-pay-logo.png" alt="Apple Pay" class="payment-logo">
+                        <img src="images/payment_logos/paypal-logo.png" alt="PayPal" class="payment-logo">
+                        <img src="images/payment_logos/visa-logo.png" alt="Visa" class="payment-logo">
+                        <img src="images/payment_logos/mastercard-logo.png" alt="Mastercard" class="payment-logo">
+                        <img src="images/payment_logos/apple-pay-logo.png" alt="Apple Pay" class="payment-logo">
                     </div>
                 </div>                            
             </div>
@@ -282,6 +366,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
 </body>
 
+<!-- Cookie Consent Banner-->
 <div id="cookie-consent-banner" class="cookie-consent-banner">
     <div class="cookie-content">
         <p>WE USE COOKIES TO IMPROVE OUR WEBSITE AND ENHANCE YOUR SHOPPING EXPERIENCE. YOU CAN CHOSE WHICH COOKIES YOU WOULD LIKE TO ACCEPT.</p>

@@ -192,10 +192,11 @@ body{
     color: white;
     font-size: 1.2rem;
     text-align: center;
-    padding: 10px 0;
+    padding: 15px;
     white-space: nowrap;
     overflow: hidden;
     position: relative;
+    margin-bottom: 10px;
 }
 
 .banner-text {
@@ -242,8 +243,8 @@ body{
 }
 
 .carousel-control-prev-icon, .carousel-control-next-icon {
-    background-color: black;
-    border-radius: 50%;
+    background-color: transparent;
+    filter: invert(1);
 }
 
 .carousel-control-prev {
@@ -315,3 +316,134 @@ body{
     color: white;
     font-weight: bold;
 }
+
+.thumbnail-img {
+    cursor: pointer;
+    width: 60px;
+    height: auto;
+    border: 2px solid transparent;
+}
+
+.thumbnail-img.selected {
+    border: 2px solid black;
+}
+
+.thumbnail-img.active {
+    border-color: #000;
+}
+
+/* Zentriere den gesamten Inhalt der linken Spalte */
+#mainImageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#mainImage {
+    width: 70%;
+    height: auto;
+}
+
+/* Zentriere das große Bild */
+.position-relative {
+    display: flex;
+    justify-content: center;
+}
+
+/* Styling für die Navigationspfeile */
+.btn-outline-dark.position-absolute {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Zentriere die Thumbnails und lege den Abstand fest */
+.thumbnail-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px; /* Abstand zwischen den Thumbnails */
+}
+
+.color-option {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+}
+
+.cart-button {
+    background-color: black;  /* Schwarzer Hintergrund */
+    color: white;             /* Weißer Text */
+    border: solid black;             /* Keine Umrandung */
+     /* Runde Ecken */
+    padding: 10px 20px;       /* Innenabstand, anpassbar je nach Bedarf */
+    font-size: 16px;          /* Schriftgröße */
+    cursor: pointer;         /* Zeiger-Cursor beim Hover */
+    text-align: center;       /* Text zentriert */
+    transition: background-color 0.3s ease; /* Sanfter Übergang für den Hover-Effekt */
+}
+
+.cart-button:hover {
+    background-color: white;
+    color: black;
+    border: solid black;
+}
+
+/* Styling für die Größenauswahl */
+.btn-group .btn {
+    font-size: 12px;          /* Kleinere Textgröße */
+    color: gray;
+    margin-right: 10px;       /* Abstand zwischen den Buttons */
+    border: transparent;  /* Keine sichtbare Umrandung */
+    padding: 10px 20px;       /* Innenabstand für den Button */
+    transition: all 0.3s ease; /* Sanfte Übergänge für alle Änderungen */
+    border-radius: 0;         /* Keine runden Ecken */
+}
+
+/* Stil für den ausgewählten Button */
+.btn-group .btn.selected {
+    border-color: transparent;  /* Keine sichtbare Umrandung an den Seiten */
+    border-bottom: 1px solid black; /* Nur untere Umrandung bei Auswahl */
+    font-weight: bold;          /* Optional: Text fett */
+}
+
+#size {
+    font-size: small;
+}
+
+/* Rechte Spalte für Produktdetails */
+.product-name {
+    display: flex;
+    flex-direction: column;
+    position: relative;  /* Positionierung des Containers */
+}
+
+/* Container für Preis und VAT */
+.price-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;  /* Platziert es ganz oben im Container */
+    right: 0; /* Rechts ausrichten */
+    text-align: right; /* Text wird nach rechts ausgerichtet */
+    margin-top: 0; /* Verhindert unnötigen Abstand oben */
+}
+
+/* Stil für den Preis */
+.price {
+    font-size: 24px;
+    margin: 0;  /* Verhindert zusätzliche Ränder */
+}
+
+/* Stil für VAT */
+.vat {
+    font-size: 14px;
+    margin-top: 5px; /* Leichter Abstand zwischen Preis und VAT */
+}
+
+/* Abstand unterhalb des Produktnamens vergrößern */
+.product-name h2 {
+    margin-bottom: 40px; /* Passe den Wert je nach Bedarf an */
+}
+
+#color-black {
+    font-size: small;
+} 
