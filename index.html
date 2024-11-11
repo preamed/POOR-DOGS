@@ -91,7 +91,12 @@
         <div class="text-container">
             <img src="images/logo_white.png" alt="white poor dogs logo" height="100">
             <p id="collection-name">LOST HOPE</p>
-            <button href="#shop" class="btn-custom" onclick="gtag('event', 'button_click', {'event_category': 'engagement','event_label': 'Shop Now', 'value': 1});">SHOP NOW</button>
+            <button href="#shop" class="btn-custom" onclick="gtag('event', 'button_click', {
+                'event_category': 'engagement',
+                'event_label': 'Shop Now',
+                'value': 1
+              });">SHOP NOW</button>
+              
         </div>
     </div>
 
@@ -116,10 +121,106 @@
         </div>
     </div>
 
+    <!-- Testimonials Section -->
+    <section class="py-3">
+        <div class="container">
+            <h2 class="text-center mb-4 testimonial-headline">WHAT OUR CUSTOMERS SAY:</h2>
+            
+            <!-- Carousel Container -->
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <!-- Review 1 -->
+                            <div class="col-md-4">
+                                <div class="testimonial">
+                                    <img src="images/5-star-rating.png" alt="5-star rating" class="rating-img">
+                                    <p class="testimonial-title font-weight-bold">Great quality!</p>
+                                    <p class="testimonial-text">I love the material and the fit. Will definitely buy again!</p>
+                                    <p class="testimonial-name">- Sarah L.</p>
+                                </div>
+                            </div>
+                            <!-- Review 2 -->
+                            <div class="col-md-4">
+                                <div class="testimonial">
+                                    <img src="images/5-star-rating.png" alt="5-star rating" class="rating-img">
+                                    <p class="testimonial-title font-weight-bold">Amazing product!</p>
+                                    <p class="testimonial-text">The design is unique and stylish. Highly recommend!</p>
+                                    <p class="testimonial-name">- John D.</p>
+                                </div>
+                            </div>
+                            <!-- Review 3 -->
+                            <div class="col-md-4">
+                                <div class="testimonial">
+                                    <img src="images/5-star-rating.png" alt="5-star rating" class="rating-img">
+                                    <p class="testimonial-title font-weight-bold">Best purchase ever!</p>
+                                    <p class="testimonial-text">I can't get enough of this brand, absolutely love it!</p>
+                                    <p class="testimonial-name">- Emily R.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Second Slide -->
+                    <div class="carousel-item">
+                        <div class="row">
+                            <!-- Review 4 -->
+                                <div class="col-md-4">
+                                    <div class="testimonial">
+                                        <img src="images/5-star-rating.png" alt="5-star rating" class="rating-img">
+                                            <p class="testimonial-title font-weight-bold">High quality!</p>
+                                            <p class="testimonial-text">Great quality and customer service, very happy!</p>
+                                            <p class="testimonial-name">- Mark P.</p>
+                                        </div>
+                                    </div>
+                            <!-- Review 5 -->
+                            <div class="col-md-4">
+                                <div class="testimonial">
+                                    <img src="images/5-star-rating.png" alt="5-star rating" class="rating-img">
+                                    <p class="testimonial-title font-weight-bold">Fantastic!</p>
+                                    <p class="testimonial-text">This brand never disappoints, always high quality!</p>
+                                    <p class="testimonial-name">- Daniel B.</p>
+                                </div>
+                            </div>
+                            <!-- Review 6 -->
+                            <div class="col-md-4">
+                                <div class="testimonial">
+                                    <img src="images/5-star-rating.png" alt="5-star rating" class="rating-img">
+                                    <p class="testimonial-title font-weight-bold">Super satisfied!</p>
+                                    <p class="testimonial-text">Exceeded my expectations, very satisfied with the product! Shipping was also really fast, would defintely recommend!</p>
+                                    <p class="testimonial-name">- Lisa M.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carousel Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py3">
+        <div class="container featured-in">
+            <h5>FEATURED IN:</h5>
+            <div class="magazine-logos">
+                <img src="images/vogue-logo.png" alt="Vouge" class="magazine-logo">
+                <img src="images/gq-logo.png" alt="GQ" class="magazine-logo">
+                <img src="images/hapers-bazar-logo.png" alt="Harpers Bazar" class="magazine-logo">
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="container py-3">
             <div class="row" style="align-items: flex-start;">
-                <!-- Spalte 1-->
+                <!-- Column 1-->
                 <div class="col-md-3">
                     <h5 class="footer-heading">FOLLOW US</h5>
                     <ul class="list-unstyled">
@@ -130,18 +231,18 @@
                         <li><a href="#pinterest" class="footer-link">PINTEREST</a></li>
                     </ul>
                 </div>
-                <!-- Spalte 2-->
+                <!-- Column 2-->
                 <div class="col-md-3">
                     <h5 class="footer-heading">INFORMATION</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#imprint" class="footer-link">IMPRINT</a></li>
+                        <li><a href="copyright.html" class="footer-link">IMPRINT</a></li>
                         <li><a href="#shipping" class="footer-link">SHIPPING</a></li>
                         <li><a href="#returns" class="footer-link">RETURNS</a></li>
                         <li><a href="#support" class="footer-link">SUPPORT</a></li>
                         <li><a href="#reviews" class="footer-link">REVIEWS</a></li>
                     </ul>
                 </div>
-                <!-- Spalte 3-->
+                <!-- Column 3-->
                 <div class="col-md-3">
                     <h5 class="footer-heading">TERMS & CONDITIONS</h5>
                     <ul class="list-unstyled">
@@ -151,7 +252,7 @@
                         <li><a href="#privacysettings" class="footer-link">PRIVACY SETTINGS</a></li>
                     </ul>
                 </div>
-                <!-- Spalte 4-->
+                <!-- Column 4-->
                 <div class="col-md-3">
                     <h5 class="footer-heading">PAYMENT METHODS</h5>
                     <div class="payment-logos">
@@ -163,10 +264,11 @@
                 </div>                            
             </div>
         </div>
+        <!-- Copyright Notice -->
         <div class="container py-2">
             <div class="row">
-                <div class="col-12 text-center">
-                    <p id="copyright">© POOR DOGS 2024 | ALL RIGHTS RESERVED</p>
+                <div class="col-12 text-center underline-text">
+                    <a href="copyright.html" id="copyright">© POOR DOGS 2024 | ALL RIGHTS RESERVED</a>
                 </div>
             </div>
         </div>        

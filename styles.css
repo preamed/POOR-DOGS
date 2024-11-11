@@ -38,6 +38,10 @@ body{
     transition: color 0.3s ease; /* Übergangseffekt für Textfarbe */
 }
 
+.nav-text:hover{
+    text-decoration: underline;
+}
+
 .nav-icon {
     color: white; /* Standardfarbe für Icons (weiß) */
     font-weight: bold;
@@ -129,7 +133,6 @@ body{
     color: black; /* Schwarzer Text */
     padding-top: 20px;
     padding-bottom: 20px;
-    border-top: 1px solid #e0e0e0; /* Optionale obere Linie für Trennung */
 }
 
 .footer-heading {
@@ -145,7 +148,7 @@ body{
 }
 
 .footer-link:hover {
-    color: #555; /* Dunklere Farbe bei Hover */
+    text-decoration: underline; /* Dunklere Farbe bei Hover */
 }
 
 .list-unstyled {
@@ -157,7 +160,18 @@ body{
     display: flex; /* Flexbox für nebeneinander anordnen */
     justify-content: space-between; /* Verteilt die Logos gleichmäßig */
     align-items: center; /* Zentriert die Logos vertikal */
-    margin-top: 15px; /* Abstand zwischen Überschrift und Logos */
+}
+
+.magazine-logos {
+    display: flex; /* Flexbox für nebeneinander anordnen */
+    justify-content: space-evenly; /* Mehr Abstand zwischen den Logos */
+    align-items: center; /* Zentriert die Logos vertikal */
+}
+
+.magazine-logo {
+    width: 120px; /* Setzt eine größere Breite für die Logos */
+    height: auto; /* Stellt sicher, dass das Seitenverhältnis des Logos beibehalten wird */
+    margin: 0 20px; /* Fügt einen horizontalen Abstand zwischen den Logos hinzu */
 }
 
 .payment-logo {
@@ -167,6 +181,8 @@ body{
 
 #copyright{
     font-weight: bold;
+    color: black;
+    text-decoration: none;
 }
 
 /* Scrolling Banner */
@@ -201,6 +217,68 @@ body{
         transform: translateX(-100%);
     }
 }
+
+.rating-img {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.testimonial {
+    text-align: left;
+    margin: 10px;
+}
+
+.testimonial-title {
+    font-weight: bold;
+}
+
+.testimonial-text {
+    font-size: 0.9rem;
+    width: 75%;
+}
+
+.testimonial-name {
+    font-style: italic;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: black;
+    border-radius: 50%;
+}
+
+.carousel-control-prev {
+    margin-left: -8rem;
+}
+
+.carousel-control-next {
+    margin-right: -8rem;
+}
+
+.underline-text:hover{
+    text-decoration: underline;
+}
+
+.featured-in {
+    text-align: center; /* Zentriert den Text (Überschrift) */
+    display: flex; /* Aktiviert Flexbox, um Inhalte besser zu positionieren */
+    justify-content: center; /* Zentriert den Inhalt horizontal */
+    align-items: center; /* Zentriert den Inhalt vertikal (falls erforderlich) */
+    flex-direction: column; /* Stellt sicher, dass der Text und die Logos untereinander angeordnet sind */
+    padding: 20px 0; /* Optional: Abstand oben und unten */
+}
+
+.featured-in h5 {
+    font-size: 1.5rem; /* Schriftgröße für die Überschrift (optional) */
+    font-weight: bold; /* Optional: Fettgedruckte Schrift */
+    margin-bottom: 20px; /* Optional: Abstand unter der Überschrift */
+}
+
+.testimonial-headline {
+    font-size: 1.5rem; /* Schriftgröße für die Überschrift (optional) */
+    font-weight: bold; /* Optional: Fettgedruckte Schrift */
+    margin-bottom: 20px; /* Optional: Abstand unter der Überschrift */
+}
+
 
 .cookie-consent-banner {
     position: fixed;
