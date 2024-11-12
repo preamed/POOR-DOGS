@@ -204,8 +204,10 @@ sizeButtons.forEach(button => {
     });
 });
 
+function send_gtag() {
     gtag('event', 'button_click', {
         'event_category': 'engagement',
         'event_label': 'Shop Now',
         'value': 1
     });
+}
