@@ -62,9 +62,8 @@
                 <!-- Links on the left side -->
                 <div class="navbar-nav me-auto d-flex align-items-center" style="flex: 1;">
                     <a class="nav-link nav-text" href="#home">HOME</a>
-                    <a class="nav-link nav-text" href="#shop">SHOP</a>
-                    <a class="nav-link nav-text" href="#collections">COLLECTIONS</a>
-                    <a class="nav-link nav-text" href="#brands">BRAND</a>
+                    <a class="nav-link nav-text" href="#ratings">RATINGS</a>
+                    <a class="nav-link nav-text" href="#featured-in">FEATURED IN</a>
                 </div>
                 
                 <!-- Logo in the middle -->
@@ -83,13 +82,13 @@
     </header>
 
     <!-- Opener -->
-    <div class="full-screen-image-container">
+    <div id="home" class="full-screen-image-container">
         <img src="images/6pm.gif" alt="Hintergrundbild" class="full-screen-image">
         <div class="image-overlay"></div>
         <div class="text-container">
             <img src="images/logo_white.png" alt="white poor dogs logo" height="100">
             <p id="collection-name">LOST HOPE</p>
-            <button class="btn-custom" onclick="scrollToShop(50)">SHOP NOW</button>              
+            <button class="btn-custom" href="#shop" onclick="send_gtag()">SHOP NOW</button>              
         </div>
     </div>
 
@@ -198,7 +197,7 @@
 
 
     <!-- Testimonials Section -->
-    <section class="py-3">
+    <section id="ratings" class="py-3">
         <div class="container">
             <h2 class="text-center mb-4 testimonial-headline">WHAT OUR CUSTOMERS SAY:</h2>
             
@@ -283,7 +282,7 @@
     </section>
 
     <!-- Featured In -->
-    <section class="py-4">
+    <section id="featured-in" class="py-4">
         <div class="container featured-in">
             <h5>FEATURED IN:</h5>
             <div class="magazine-logos">

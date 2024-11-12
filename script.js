@@ -204,18 +204,8 @@ sizeButtons.forEach(button => {
     });
 });
 
-function scrollToShop() {
-    const target = document.getElementById('shop');
-    
-    if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-        
-        gtag('event', 'button_click', {
-            'event_category': 'engagement',
-            'event_label': 'Shop Now',
-            'value': 1
-        });
-    } else {
-        console.error('Element mit ID "shop" nicht gefunden');
-    }
-}
+    gtag('event', 'button_click', {
+        'event_category': 'engagement',
+        'event_label': 'Shop Now',
+        'value': 1
+    });
