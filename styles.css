@@ -58,12 +58,6 @@ body{
     transition: background-image 0.3s ease;
 }
 
-/* Optionaler Hover-Effekt für das Logo in der Navbar */
-.navbar:hover #logo-container {
-    background-image: url('images/logo-black.svg'); /* Schwarzes Logo beim Hover */
-}
-
-
 /* Hover-Effekt für die Navbar: Hintergrund wird weiß und Text/Icons schwarz */
 .navbar:hover {
     background-color: white; /* Weißer Hintergrund bei Hover */
