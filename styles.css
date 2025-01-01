@@ -2,7 +2,7 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 .navbar {
-    padding: 1%;
+    padding: 2%;
     height: 1vw;
     background-color: transparent;
     transition: background-color 0.3s ease; /* Übergangseffekt für Hintergrundfarbe */
@@ -34,7 +34,7 @@ body{
 .nav-text {
     color: white; /* Standardfarbe für Text (weiß) */
     font-weight: bold;
-    font-size: 11px;
+    font-size: 13px;
     transition: color 0.3s ease; /* Übergangseffekt für Textfarbe */
 }
 
@@ -435,7 +435,7 @@ body{
 
 /* Abstand unterhalb des Produktnamens vergrößern */
 .product-name h2 {
-    margin-bottom: 40px; /* Passe den Wert je nach Bedarf an */
+    margin-bottom: 70px; /* Passe den Wert je nach Bedarf an */
 }
 
 #color-black {
@@ -443,5 +443,31 @@ body{
 } 
 
 .product-details {
-    margin-bottom: -5px;
+    margin-top: 40px;
+}
+
+
+.related-product img {
+    max-width: 50%; /* Optionale Begrenzung der Bildgröße */
+    margin: 0 auto;
+}
+
+.related-product h5 {
+    font-size: 1rem; /* Schriftgröße für die Überschrift (optional) */
+    font-weight: bold; /* Optional: Fettgedruckte Schrift */
+    margin-top: 10px; /* Optional: Abstand unter der Überschrift */
+}
+
+.related-product p {
+    color: #6c757d;
+}
+
+#related-headline{
+    font-size: 1.5rem; /* Schriftgröße für die Überschrift (optional) */
+    font-weight: bold; /* Optional: Fettgedruckte Schrift */
+    margin-bottom: 200px; /* Optional: Abstand unter der Überschrift */
+}
+
+.product-row {
+    margin-top: 100px; /* Abstand oberhalb der Produktbilder */
 }
