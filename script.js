@@ -219,3 +219,11 @@ function scrollToShop() {
         console.error('Element mit ID "shop" nicht gefunden');
     }
 }
+
+function AddToCart() {
+    gtag('event', 'button_click', {
+        'event_category': 'engagement',
+        'event_label': 'Add To Cart',
+        'value': 1
+    });
+}
