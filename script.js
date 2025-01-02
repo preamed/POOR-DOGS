@@ -228,10 +228,26 @@ function AddToCart() {
     });
 }
 
-function trackProductClick(productName) {
+function trackZipper() {
     gtag('event', 'product_click', {
-        'event_category': 'related_product',
-        'event_label': productName,
+        'event_category': 'engagement',
+        'event_label': 'Logo Zipper',
+        'value': 1
+    });
+}
+
+function trackDenim() {
+    gtag('event', 'product_click', {
+        'event_category': 'engagement',
+        'event_label': 'Black Denim',
+        'value': 1
+    });
+}
+
+function trackHoodie() {
+    gtag('event', 'product_click', {
+        'event_category': 'engagement',
+        'event_label': 'Backprint Hoodie',
         'value': 1
     });
 }
