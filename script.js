@@ -227,3 +227,11 @@ function AddToCart() {
         'value': 1
     });
 }
+
+function trackProductClick(productName) {
+    gtag('event', 'product_click', {
+        'event_category': 'related_product',
+        'event_label': productName,
+        'value': 1
+    });
+}
