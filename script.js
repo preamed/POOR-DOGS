@@ -14,7 +14,7 @@ function changeNavbarState() {
     if (window.scrollY > 0) {
         navbar.classList.add('sticky'); // Fügt die Klasse 'sticky' hinzu, wenn gescrollt
         // Logo auf schwarz ändern
-        logoContainer.style.backgroundImage = "url('images/logo-black.svg')";
+        logoContainer.style.backgroundImage = "url('images/logo-red.svg')";
         
         // Navbar-Hintergrund auf weiß setzen
         navbar.style.backgroundColor = "white"; 
@@ -43,7 +43,7 @@ const navIcon = document.querySelectorAll('.nav-icon');
 
 // Ändert das Logo auf schwarz, wenn die Navbar gehovt wird
 navbar.addEventListener('mouseover', function () {
-    logoContainer.style.backgroundImage = "url('images/logo-black.svg')";
+    logoContainer.style.backgroundImage = "url('images/logo-red.svg')";
     navbar.style.backgroundColor = "white"; // Hintergrund weiß bei Hover
     // Text und Icons auf schwarz setzen
     navText.forEach(item => item.style.color = "black");
