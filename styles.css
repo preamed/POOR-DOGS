@@ -100,8 +100,8 @@ body{
 }
 
 .btn-custom {
-    background-color: white;
-    color: black; /* Button-Textfarbe */
+    background-color: #95160C;
+    color: white; /* Button-Textfarbe */
     margin-top: -10px;
     padding: 8px 20px; /* Button-Größe */
     border: none;
@@ -111,8 +111,8 @@ body{
 }
 
 .btn-custom:hover {
-    background-color: black; /* Dunklerer Farbton bei Hover */
-    color: white;
+    background-color: white; /* Dunklerer Farbton bei Hover */
+    color: #95160C;
 }
 
 #accept-all-cookies {
@@ -481,4 +481,8 @@ body{
 
 .product-row {
     margin-top: 100px; /* Abstand oberhalb der Produktbilder */
+}
+
+#shop-now {
+    color: #95160C;
 }
